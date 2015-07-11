@@ -24,7 +24,7 @@
     </div>
 
     <asp:GridView ID="grdStudent" runat="server" CssClass="table table-striped table-hover" AutoGenerateColumns="false" 
-        OnRowDeleting="grdStudent_RowDeleting" DataKeyNames="StudentID">
+        OnRowDeleting="grdStudent_RowDeleting" DataKeyNames="CourseID">
         
         <Columns>
             

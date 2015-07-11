@@ -92,7 +92,7 @@ namespace lesson9
                             join e in db.Enrollments on s.StudentID equals e.StudentID
                             join co in db.Courses on e.CourseID equals co.CourseID
                             where co.CourseID == CourseID
-                            select new { s.LastName, s.FirstMidName, s.EnrollmentDate});
+                            select new { s.LastName, s.FirstMidName, s.EnrollmentDate, co.CourseID});
 
                 grdStudent.DataSource = objE.ToList();
                 grdStudent.DataBind();
