@@ -96,12 +96,24 @@ namespace lesson9
             //use Entity Framework to remove the selected student from the db
             using (comp2007Entities db = new comp2007Entities())
             {
-                Course objE = (from c in db.Courses
+                var objE = from en in db.Enrollments
+                                   where en.CourseID == CourseID
+                                   select en;
+
+                //do the delete
+                foreach (var enrollments in objE) {
+                db.Enrollments.Remove(enrollments);
+                }
+            
+                db.SaveChanges();
+            
+
+                Course objC = (from c in db.Courses
                                    where c.CourseID == CourseID
                                    select c).FirstOrDefault();
 
                 //do the delete
-                db.Courses.Remove(objE);
+                db.Courses.Remove(objC);
                 db.SaveChanges();
             }
 

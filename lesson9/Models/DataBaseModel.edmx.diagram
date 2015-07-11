@@ -8,8 +8,8 @@
         <EntityTypeShape EntityType="comp2007Model1.Course" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="comp2007Model1.Department" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="comp2007Model1.Enrollment" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="comp2007Model1.SalesRep" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="comp2007Model1.Student" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="comp2007Model1.SalesRep" Width="1.5" PointX="13.125" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="comp2007Model1.Student" Width="1.5" PointX="8.125" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="comp2007Model1.FK_Courses_DepartmentID" ManuallyRouted="false" />
         <AssociationConnector Association="comp2007Model1.FK_Enrollments_CourseID" ManuallyRouted="false" />
         <AssociationConnector Association="comp2007Model1.FK_Enrollments_StudentID" ManuallyRouted="false" />
