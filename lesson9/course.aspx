@@ -22,4 +22,19 @@
         <asp:Button id="btnSave" runat="server" Text="Save" CssClass="btn btn-primary" OnClick="btnSave_Click"
             />
     </div>
+
+    <asp:GridView ID="grdStudent" runat="server" CssClass="table table-striped table-hover" AutoGenerateColumns="false" 
+        OnRowDeleting="grdStudent_RowDeleting" DataKeyNames="StudentID">
+        
+        <Columns>
+            
+            <asp:BoundField DataField="LastName" HeaderText="Last Name:" />
+            <asp:BoundField DataField="FirstMidName" HeaderText="First Name:" />
+            <asp:BoundField DataField="EnrollmentDate" HeaderText="Enrollment Data" DataFormatString="{0:MM-dd-yyyy}" />
+
+            <asp:CommandField HeaderText="Delete" DeleteText="Delete" ShowDeleteButton="true" /><%--ButtonType="Button" ControlStyle-CssClass="button btn-danger"--%>
+
+        </Columns>
+    </asp:GridView>
+
 </asp:Content>

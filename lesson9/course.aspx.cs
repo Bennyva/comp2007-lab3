@@ -86,11 +86,24 @@ namespace lesson9
                 txtCredits.Text = c.Credits.ToString();
                 ddDepartment.SelectedValue = c.DepartmentID.ToString();
 
-                
 
+                //enrollments - this code goes in the same method that populates the student form but below the existing code that's already in GetStudent()               
+                var objE = (from s in db.Students
+                            join e in db.Enrollments on s.StudentID equals e.StudentID
+                            join co in db.Courses on e.CourseID equals co.CourseID
+                            where co.CourseID == CourseID
+                            select new { s.LastName, s.FirstMidName, s.EnrollmentDate});
+
+                grdStudent.DataSource = objE.ToList();
+                grdStudent.DataBind();
               
 
             }
+        }
+
+        protected void grdStudent_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+
         }
     }
 }
