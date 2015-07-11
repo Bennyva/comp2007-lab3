@@ -142,7 +142,7 @@
           <Property Name="CourseID" Type="Int32" Nullable="false" />
           <Property Name="StudentID" Type="Int32" Nullable="false" />
           <Property Name="Grade" Type="Int32" />
-          <NavigationProperty Name="Cours" Relationship="Self.FK_Enrollments_CourseID" FromRole="Enrollments" ToRole="Courses" />
+          <NavigationProperty Name="Course" Relationship="Self.FK_Enrollments_CourseID" FromRole="Enrollments" ToRole="Courses" />
           <NavigationProperty Name="Student" Relationship="Self.FK_Enrollments_StudentID" FromRole="Enrollments" ToRole="Students" />
         </EntityType>
         <EntityType Name="SalesRep">

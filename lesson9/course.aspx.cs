@@ -92,7 +92,7 @@ namespace lesson9
                             join e in db.Enrollments on s.StudentID equals e.StudentID
                             join co in db.Courses on e.CourseID equals co.CourseID
                             where co.CourseID == CourseID
-                            select new { s.LastName, s.FirstMidName, s.EnrollmentDate, co.CourseID});
+                            select new { s.LastName, s.FirstMidName, s.EnrollmentDate, co.CourseID, s.StudentID});
 
                 grdStudent.DataSource = objE.ToList();
                 grdStudent.DataBind();
@@ -103,7 +103,25 @@ namespace lesson9
 
         protected void grdStudent_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
+            //get the selected studentID using the grid's data key collection
+            Int32 StudentID = Convert.ToInt32(grdStudent.DataKeys[e.RowIndex].Values["StudentID"]);
 
+
+
+            //use Entity Framework to remove the selected student from the db
+            using (comp2007Entities db = new comp2007Entities())
+            {
+                Student objE = (from s in db.Students
+                                   where s.StudentID == StudentID
+                                   select s).FirstOrDefault();
+
+                //do the delete
+                db.Students.Remove(objE);
+                db.SaveChanges();
+            }
+
+            //refresh the grid
+            GetCourse();
         }
     }
 }

@@ -45,11 +45,8 @@ namespace lesson9
 
         protected void grdStudents_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            //store which row was clicked
-            Int32 selectedRow = e.RowIndex;
-
             //get the selected studentID using the grid's data key collection
-            Int32 StudentID = Convert.ToInt32(grdStudents.DataKeys[selectedRow].Values["StudentID"]);
+            Int32 StudentID = Convert.ToInt32(grdStudents.DataKeys[e.RowIndex].Values["StudentID"]);
 
             //use Entity Framework to remove the selected student from the db
             using (comp2007Entities db = new comp2007Entities())
@@ -65,6 +62,9 @@ namespace lesson9
 
             //refresh the grid
             GetStudents();
+
+            
+
         }
 
         protected void ddlPageSize_SelectedIndexChanged(object sender, EventArgs e)
