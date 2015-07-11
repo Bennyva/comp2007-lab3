@@ -27,11 +27,11 @@
         OnRowDeleting="grdStudent_RowDeleting" DataKeyNames="CourseID">
         
         <Columns>
-            
+            <asp:BoundField DataField="StudentID" HeaderText="Student ID:"/>
             <asp:BoundField DataField="LastName" HeaderText="Last Name:" />
             <asp:BoundField DataField="FirstMidName" HeaderText="First Name:" />
             <asp:BoundField DataField="EnrollmentDate" HeaderText="Enrollment Data" DataFormatString="{0:MM-dd-yyyy}" />
-            <asp:BoundField DataField="StudentID" Visible="false" />
+            
             <asp:CommandField HeaderText="Delete" DeleteText="Delete" ShowDeleteButton="true" /><%--ButtonType="Button" ControlStyle-CssClass="button btn-danger"--%>
 
         </Columns>

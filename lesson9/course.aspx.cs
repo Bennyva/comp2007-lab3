@@ -104,7 +104,10 @@ namespace lesson9
         protected void grdStudent_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             //get the selected studentID using the grid's data key collection
-            Int32 StudentID = Convert.ToInt32(grdStudent.DataKeys[e.RowIndex].Values["StudentID"]);
+            Int32 StudentID = Convert.ToInt32(grdStudent.Rows[e.RowIndex].Cells[0].Text);
+
+
+                //DataKeys[e.RowIndex].Values["StudentID"]);
 
 
 
