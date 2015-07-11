@@ -19,7 +19,7 @@
         <asp:Button id="btnSave" runat="server" Text="Save" CssClass="btn btn-primary" OnClick="btnSave_Click"
             />
     </div>
-
+    <h1>Courses</h1>
      <asp:GridView ID="grdDepartment" runat="server" CssClass="table table-striped table-hover" AutoGenerateColumns="false" 
         OnRowDeleting="grdDepartment_RowDeleting" DataKeyNames="CourseID">
         
